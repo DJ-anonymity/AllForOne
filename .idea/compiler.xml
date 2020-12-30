@@ -13,7 +13,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="curd1" target="12" />
-      <module name="people" target="1.7" />
+      <module name="people" target="12" />
     </bytecodeTargetLevel>
   </component>
 </project>
