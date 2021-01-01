@@ -14,7 +14,7 @@
             <div class="title" >
                 <p>个人健康信息管理系统</p>
             </div>
-            <form action="${path}/user/resign" method="POST">
+            <form action="http://localhost:8080/people_war_exploded/user/resign" method="POST">
                 <div class="form1" href="main">
                     <p class="p-input pos">
                         <label for="name">姓名</label>
