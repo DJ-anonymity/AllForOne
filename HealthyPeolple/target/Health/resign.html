@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>resign</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/reg.css">
+</head>
+<body>
+<div id="ajax-hook"></div>
+<div class="wrap">
+    <div class="wpn">
+        <div class="form-data pos">
+            <div class="title" >
+                <p>个人健康信息管理系统</p>
+            </div>
+            <form method="POST">
+                <div class="form1" href="main">
+                    <p class="p-input pos">
+                        <label for="realname">姓名</label>
+                        <input type="text" style="display:none">
+                        <input type="text" id="realname" name="realname">
+                    </p>
+                    <p class="p-input pos" STYLE="padding-top: 15px">
+                        <label for="username">用户名</label>
+                        <input type="text" id="username" name="username">
+                    </p>
+                    <p class="p-input pos">
+                        <label for="password">密码</label>
+                        <input type="password" style="display:none">
+                        <input type="password" id="password" name="password">
+                    </p>
+                </div>
+
+                <button class="lang-btn resign" id="resign" type="submit">确认</button>
+                <p class="right">Powered by © 2020</p>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<script src="../js/jquery.js"></script>
+<script src="../js/agree.js"></script>
+<script src="../js/login.js"></script>
+<script src="jquery/jquery.min.js"/>
+<div style="text-align:center;"></div>
+<script>
+    document.getElementById("resign").addEventListener("click", function () {
+        var realname = document.getElementById("realname").value;
+        var password = document.getElementById("password").value;
+        var name = document.getElementById("username").value;
+        console.log(name)
+        if(name == null || password == null || realname == null){
+            alert("账号密码不能为空");
+            return;
+        }
+        $.ajax({
+            url: "http://localhost:8080/people_war_exploded/user/resign",
+            type: "post",
+            //发送的数据
+            data: JSON.stringify({username:name,password:password,realname:realname}),
+            contentType: "application/json;charset=UTF-8",
+            dataType: "json",
+            success: function (data) {
+                if (data.status == 0){
+                    alert(data.msg);
+                }
+                else{
+                    alert("注册成功")
+                    window.location.href="login.html";
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>
