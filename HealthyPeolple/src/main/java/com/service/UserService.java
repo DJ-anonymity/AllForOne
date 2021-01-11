@@ -3,9 +3,10 @@ package com.service;
 import com.pojo.User;
 
 public interface UserService {
-    Integer CheckLogin(String username,String password);
+    Integer CheckLogin(User user);
 
     Integer Resign(User user);
 
-    public Integer test(Integer i);
+    public User queryById(Integer id);
+    public User queryByName(String name);
 }

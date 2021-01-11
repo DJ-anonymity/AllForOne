@@ -13,7 +13,7 @@ public class test {
     public void test(){
         //zfgdemo
         UserService userDao = new UserImpl();
-        userDao.test(1);
+
         System.out.println("end");
     }
 }
