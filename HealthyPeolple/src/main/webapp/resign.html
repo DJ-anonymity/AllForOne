@@ -32,18 +32,19 @@
                     </p>
                 </div>
 
-                <button class="lang-btn resign" id="resign" type="submit">确认</button>
+                <a class="lang-btn resign" id="resign">确认</a>
                 <p class="right">Powered by © 2020</p>
             </form>
         </div>
     </div>
 </div>
 </div>
-<script src="../js/jquery.js"></script>
-<script src="../js/agree.js"></script>
-<script src="../js/login.js"></script>
-<script src="jquery/jquery.min.js"/>
+<script src="js/jquery.js"></script>
+<script src="js/agree.js"></script>
+<script src="js/login.js"></script>
+<script src="jquery/jquery.js"></script>
 <div style="text-align:center;"></div>
+</body>
 <script>
     document.getElementById("resign").addEventListener("click", function () {
         var realname = document.getElementById("realname").value;
@@ -55,7 +56,7 @@
             return;
         }
         $.ajax({
-            url: "http://localhost:8080/people_war_exploded/user/resign",
+            url: "user/resign",
             type: "post",
             //发送的数据
             data: JSON.stringify({username:name,password:password,realname:realname}),
@@ -66,12 +67,11 @@
                     alert(data.msg);
                 }
                 else{
-                    alert("注册成功")
+                    alert("注册成功，请登录")
                     window.location.href="login.html";
                 }
             }
         })
     })
 </script>
-</body>
 </html>

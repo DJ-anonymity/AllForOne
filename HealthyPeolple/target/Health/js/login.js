@@ -24,25 +24,20 @@ $(function(){
 
 	$('#login-username').keyup(function(event) {
 		$('.tel-warn').addClass('hide');
-		checkBtn();
 	});
 
 	$('#login-password').keyup(function(event) {
 		$('.tel-warn').addClass('hide');
-		checkBtn();
 	});
 
 	$('#realname').keyup(function(event) {
 		$('.tel-warn').addClass('hide');
-		checkBtn();
 	});
 	$('#username').keyup(function(event) {
 		$('.tel-warn').addClass('hide');
-		checkBtn();
 	});
 	$('#password').keyup(function(event) {
 		$('.tel-warn').addClass('hide');
-		checkBtn();
 	});
 
 	// $('#num2').keyup(function(event) {
@@ -113,31 +108,7 @@ $(function(){
 	// 登录点击事件
 
 
-	document.getElementById("login").addEventListener("click", function () {
-		var name = document.getElementById("login-username").value;
-		var password = document.getElementById("login-password").value;
-		if(name == null || password == null){
-			alert("账号密码不能为空");
-			return;
-		}
-		$.ajax({
-			url: "/user/checkLogin",
-			type: "post",
-			//发送的数据
-			data: JSON.stringify({username:name,password:password}),
-			contentType: "application/json;charset=UTF-8",
-			dataType: "json",
-			success: function (data) {
-				if (data.status == 0){
-					alert(data.msg);
-				}
-				else{
-					alert("登录成功")
-					window.location.href="index2.html";
-				}
-			}
-		})
-	})
+
 
 
 

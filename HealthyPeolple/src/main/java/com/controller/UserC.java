@@ -52,8 +52,8 @@ public class UserC {
         map.put("msg","用户名或密码错误");
         return "login";
     }
-    @RequestMapping("/resign")
-    public String Resign(User user,Map<String,Object> map){
+    @PostMapping("/resign")
+    public String Resign(@RequestBody User user,Map<String,Object> map){
         int status = userService.Resign(user);
         System.out.println("status: "+status);
         map.put("msg","注册成功,请登录");
