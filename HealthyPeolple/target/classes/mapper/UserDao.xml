@@ -28,8 +28,8 @@
     where `Uid` = #{uid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="Uid" keyProperty="uid" parameterType="com.pojo.User" useGeneratedKeys="true">
-    insert into user (username, 'realname', `password`)
-    values (#{username,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
+    insert into user (username,realname,password)
+    values (#{username,jdbcType=VARCHAR}, #{realname}, #{password,jdbcType=VARCHAR})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.pojo.User">
     update user

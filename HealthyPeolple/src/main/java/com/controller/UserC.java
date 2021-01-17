@@ -1,11 +1,13 @@
 package com.controller;
 
+import com.common.MyResponse;
 import com.pojo.User;
 import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpSession;
 import java.util.Map;
 
@@ -53,11 +55,14 @@ public class UserC {
         return "login";
     }
     @PostMapping("/resign")
-    public String Resign(@RequestBody User user,Map<String,Object> map){
+    public MyResponse Resign(@RequestBody User user){
         int status = userService.Resign(user);
+        MyResponse response = new MyResponse();
+        response.setMsg("注册成功,请登录");
+        response.setRStatus(1);
         System.out.println("status: "+status);
-        map.put("msg","注册成功,请登录");
-        return "redirect:/login";
+
+        return response;
     }
     @RequestMapping("login")
     public String loginUser(){
