@@ -1,5 +1,6 @@
 package com;
 
+import com.common.ResponseCode;
 import com.dao.UserDao;
 import com.pojo.User;
 import com.service.Impl.UserImpl;
@@ -11,9 +12,6 @@ public class test {
 
     @Test
     public void test(){
-        //zfgdemo
-        UserService userDao = new UserImpl();
-
-        System.out.println("end");
+        System.out.println(ResponseCode.SUCCESS.getDesc());
     }
 }

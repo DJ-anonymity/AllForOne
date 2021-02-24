@@ -14,9 +14,9 @@ public class UserImpl implements UserService {
     @Override
     public Integer CheckLogin(User user) {
         User user1 = userDao.selectByUserName(user.getUsername());
-        if (user.getUid()>0)
-            if (user.getPassword().equals(user.getPassword()))
-                return user.getStatus();
+        if (user1.getUid()>0)
+            if (user1.getPassword().equals(user.getPassword()))
+                return user1.getStatus();
         return 2;
     }
 

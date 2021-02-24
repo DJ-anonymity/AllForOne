@@ -34,9 +34,9 @@
                 <div class="r-forget cl">
                     <a href="getpass.html" class="y">忘记密码</a>
                 </div>
-                <button class="lang-btn resign" href="#" id="login">登录</button>
+                <a class="lang-btn resign" id="login">登录</a>
                 <a class="lang-btn resign" href="http://localhost:8080/people_war_exploded/resign.html">注册</a>
-                <p class="right">Powered by © 2020</p>
+                <p class="right">Powered by © 2021</p>
             </form>
         </div>
     </div>
@@ -53,25 +53,28 @@
     document.getElementById("login").addEventListener("click", function () {
         var name = document.getElementById("login-username").value;
         var password = document.getElementById("login-password").value;
-        if(name != null || password != null){
+        if(name == null || password == null){
             alert("账号密码不能为空");
             return;
         }
 
+
         $.ajax({
-            url: "/user/checkLogin",
+            url: "user/checkLogin",
             type: "post",
             //发送的数据
             data: JSON.stringify({username:name,password:password}),
             contentType: "application/json;charset=UTF-8",
             dataType: "json",
             success: function (data) {
+                console.log("name")
+                console.log(data)
                 if (data.status == 0){
                     alert(data.msg);
                 }
                 else{
                     alert("登录成功")
-                    window.location.href="index2.html";
+                    window.location.href="main3.html";
                 }
             }
         })

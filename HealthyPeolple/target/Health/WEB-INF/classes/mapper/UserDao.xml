@@ -17,7 +17,7 @@
     from user
     where `Uid` = #{uid,jdbcType=INTEGER}
   </select>
-  <select id="selectByUserName" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByUserName" parameterType="String" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from user
@@ -27,10 +27,17 @@
     delete from user
     where `Uid` = #{uid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="Uid" keyProperty="uid" parameterType="com.pojo.User" useGeneratedKeys="true">
-    insert into user (username,realname,password)
-    values (#{username,jdbcType=VARCHAR}, #{realname}, #{password,jdbcType=VARCHAR})
+
+ <!-- <insert id="insert" parameterType="com.pojo.User">
+    insert into user(username, realname, password)
+    values (#{username,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
+  </insert>-->
+
+  <insert id="insert" parameterType="com.pojo.User">
+    insert into user(username, realname, password)
+    values (#{username,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
   </insert>
+
   <update id="updateByPrimaryKey" parameterType="com.pojo.User">
     update user
     set username = #{username,jdbcType=VARCHAR},

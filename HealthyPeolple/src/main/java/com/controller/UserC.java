@@ -1,6 +1,6 @@
 package com.controller;
 
-import com.common.MyResponse;
+import com.common.ServerResponse;
 import com.pojo.User;
 import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,21 +23,14 @@ public class UserC {
         User user = userService.queryById((Integer) session.getAttribute("id"));
         return user;
     }
-//    @RequestMapping("/check")
-//    public String CheckUser(@RequestParam("username") String username,
-//                             @RequestParam("password") String password,
-//                             Map<String,Object> map, HttpSession session){
-//        if (userService.CheckLogin(username,password)==0){
-//            session.setAttribute("loginUser", username);
-//            return "main";}
-//        else{
-//            map.put("msg","用户名或密码错误");
-//            return "login";}
-//    }
-    @GetMapping("/checkLogin")
-    public String checkLogin(@RequestBody User user,
+
+    @PostMapping("/checkLogin")
+    @ResponseBody
+    public int checkLogin(@RequestBody User user,
                             Map<String,Object> map, HttpSession session){
+        user.toString();
         Integer status = userService.CheckLogin(user);
+
         if (status<4){
             session.setAttribute("username", user.getUsername());
             session.setAttribute("id", user.getUid());
@@ -45,24 +38,23 @@ public class UserC {
         }
         switch(status){
             case 1:
-                return "main1";
             case 3:
-                return "main3";
+                return status;
             default:
                 break;
         }
         map.put("msg","用户名或密码错误");
-        return "login";
+        return 0;
     }
     @PostMapping("/resign")
-    public MyResponse Resign(@RequestBody User user){
+    @ResponseBody
+    public ServerResponse Resign(@RequestBody User user){
         int status = userService.Resign(user);
-        MyResponse response = new MyResponse();
-        response.setMsg("注册成功,请登录");
-        response.setRStatus(1);
+//        ServerResponse response = new ServerResponse();
+//        response.setMsg("注册成功,请登录");
+//        response.setRStatus(1);
         System.out.println("status: "+status);
-
-        return response;
+        return ServerResponse.createBySuccessMessage("注册成功,请登录");
     }
     @RequestMapping("login")
     public String loginUser(){
