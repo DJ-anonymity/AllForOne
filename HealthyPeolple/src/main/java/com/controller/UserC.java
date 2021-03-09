@@ -20,7 +20,8 @@ public class UserC {
     @ResponseBody
     @GetMapping("/session")
     public User getSession(HttpSession session){
-        User user = userService.queryById((Integer) session.getAttribute("id"));
+        User user = (User) session.getAttribute("user");
+
         return user;
     }
 
@@ -29,17 +30,13 @@ public class UserC {
     public int checkLogin(@RequestBody User user,
                             Map<String,Object> map, HttpSession session){
         user.toString();
-        Integer status = userService.CheckLogin(user);
+        User user1 = userService.CheckLogin(user);
 
-        if (status<4){
-            session.setAttribute("username", user.getUsername());
-            session.setAttribute("id", user.getUid());
-            session.setAttribute("status", user.getStatus());
-        }
-        switch(status){
+        switch(user1.getStatus()){
             case 1:
             case 3:
-                return status;
+                session.setAttribute("user", user1);
+                return user1.getStatus();
             default:
                 break;
         }

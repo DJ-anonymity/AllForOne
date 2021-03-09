@@ -3,7 +3,7 @@ package com.service;
 import com.pojo.User;
 
 public interface UserService {
-    Integer CheckLogin(User user);
+    User CheckLogin(User user);
 
     Integer Resign(User user);
 

@@ -1,389 +1,301 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
     <meta charset="utf-8">
-    <title>小区管理系统</title>
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="http://demo.kangjingept.com:8020/favicon.ico" type="image/x-icon">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <script type="text/javascript" src="js/okLoading.js"></script>
-    <link rel="stylesheet" href="css/main.css" media="all">
-    <link rel="stylesheet" href="css/font.css">
-</head>
-<style>
-    .show_list{display: block;}
-    .hide_lits{display: none;}
-</style>
-<body>
-<div class="layui-layout layui-layout-admin">
-    <div class="layui-header header header-demo">
-        <div class="layui-main">
-            <div class="admin-logo-box">
-                <a class="logo" href title="logo">小区管理系统</a>
-                <div class="larry-side-menu">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>首页 - 个人健康信息管理系统</title>
+    <link rel="icon" href="favicon.ico" type="image/ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
 
-                    <img src="images/ss.png" alt>
+</head>
+<script src="js/jquery-2.1.1.js"></script>
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <aside class="lyear-layout-sidebar">
+
+            <!-- logo -->
+            <div id="logo" class="sidebar-header" style="height: 70px;align-items: center;">
+                <a href="main1.html" style="padding-top: 20px;font-size: 20px">个人健康信息管理系统</a>
+            </div>
+            <div class="lyear-layout-sidebar-scroll">
+
+                <nav class="sidebar-main">
+                    <ul class="nav nav-drawer">
+                        <li class="nav-item active"> <a href="index.html"><i class="mdi mdi-home"></i> 首页</a> </li>
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="mdi mdi-palette"></i>健康信息管理</a>
+                            <ul class="nav nav-subnav">
+                                <li> <a href="examination.html">体检记录</a> </li>
+                                <li> <a href="records.html">健康档案</a> </li>
+                                <li> <a href="eat_t.html">饮食记录</a> </li>
+                                <li> <a href="sport_t.html">运动记录</a> </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="analysis.html"><i class="mdi mdi-format-align-justify"></i>健康数据分析</a>
+                        </li>
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="plan.html"><i class="mdi mdi-file-outline"></i>健康方案</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <p class="copyright">Copyright &copy; 2021. All rights reserved.</p>
                 </div>
             </div>
 
-            <ul class="layui-nav" lay-filter>
-                <li class="layui-nav-item" id="time" style="margin-right: 50px;font-size: 16px;color: #2fb9d4;position: absolute;left: -250px;top: 0"></li>
-                <li class="layui-nav-item"><img src="images/tx.jpeg" class="layui-circle" style="border: 2px solid #A9B7B7;" width="35px" height="35px" alt></li>
-                <li class="new-nav " id="gonggao">
-                    <i></i>
-                    <a href="#"><i class="iconfont">&#xe6bc;</i><span class="layui-badge">4</span></a>
-                    <ul class="news" id="gonggaos" style="display: none;">
-                        <li class="dropdown-header"><i class="iconfont">&#xe6bc;</i>4条活动</li>
-                        <li> <a href="javascript:;" onclick="xadmin.add_tab('统计页面','notice-list.html')">
-                            <div class="clearfix">
-                                <span class="pull-left"> <i class="btn btn-pink iconfont">&#xe6bc;</i> 小区活动 </span>
-                                <span class="pull-right badge badge-info">+12</span>
-                            </div> </a> </li>
-                        <li> <a href="javascript:;"> <i class="btn btn-primary iconfont">&#xe6bc;</i> 业主活动 </a> </li>
+        </aside>
+        <!--End 左侧导航-->
 
-                        <li> <a href="javascript:;">查看所有活动 <i class="iconfont">&#xe69b;</i> </a> </li>
+        <!--头部信息-->
+        <header class="lyear-layout-header">
+
+            <nav class="navbar navbar-default">
+                <div class="topbar">
+
+                    <div class="topbar-left">
+                        <div class="lyear-aside-toggler">
+                            <span class="lyear-toggler-bar"></span>
+                            <span class="lyear-toggler-bar"></span>
+                            <span class="lyear-toggler-bar"></span>
+                        </div>
+                        <span class="navbar-page-title"> 首页 </span>
+                    </div>
+
+                    <ul class="topbar-right">
+                        <li class="dropdown dropdown-profile">
+                            <a href="javascript:void(0)" data-toggle="dropdown">
+                                <span id="username">username<span class="caret"></span></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li> <a href="lyear_pages_profile.html"><i class="mdi mdi-account"></i> 个人信息</a> </li>
+                                <li> <a href="lyear_pages_edit_pwd.html"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
+                                <li class="divider"></li>
+                                <li> <a href="lyear_pages_login.html"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
+                            </ul>
+                        </li>
+                        <!--切换主题配色-->
+                        <li class="dropdown dropdown-skin">
+                            <span data-toggle="dropdown" class="icon-palette"><i class="mdi mdi-palette"></i></span>
+                            <ul class="dropdown-menu dropdown-menu-right" data-stopPropagation="true">
+                                <li class="drop-title"><p>主题</p></li>
+                                <li class="drop-skin-li clearfix">
+                  <span class="inverse">
+                    <input type="radio" name="site_theme" value="default" id="site_theme_1" checked>
+                    <label for="site_theme_1"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="site_theme" value="dark" id="site_theme_2">
+                    <label for="site_theme_2"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="site_theme" value="translucent" id="site_theme_3">
+                    <label for="site_theme_3"></label>
+                  </span>
+                                </li>
+                                <li class="drop-title"><p>LOGO</p></li>
+                                <li class="drop-skin-li clearfix">
+                  <span class="inverse">
+                    <input type="radio" name="logo_bg" value="default" id="logo_bg_1" checked>
+                    <label for="logo_bg_1"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="logo_bg" value="color_2" id="logo_bg_2">
+                    <label for="logo_bg_2"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="logo_bg" value="color_3" id="logo_bg_3">
+                    <label for="logo_bg_3"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="logo_bg" value="color_4" id="logo_bg_4">
+                    <label for="logo_bg_4"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="logo_bg" value="color_5" id="logo_bg_5">
+                    <label for="logo_bg_5"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="logo_bg" value="color_6" id="logo_bg_6">
+                    <label for="logo_bg_6"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="logo_bg" value="color_7" id="logo_bg_7">
+                    <label for="logo_bg_7"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="logo_bg" value="color_8" id="logo_bg_8">
+                    <label for="logo_bg_8"></label>
+                  </span>
+                                </li>
+                                <li class="drop-title"><p>头部</p></li>
+                                <li class="drop-skin-li clearfix">
+                  <span class="inverse">
+                    <input type="radio" name="header_bg" value="default" id="header_bg_1" checked>
+                    <label for="header_bg_1"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="header_bg" value="color_2" id="header_bg_2">
+                    <label for="header_bg_2"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="header_bg" value="color_3" id="header_bg_3">
+                    <label for="header_bg_3"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="header_bg" value="color_4" id="header_bg_4">
+                    <label for="header_bg_4"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="header_bg" value="color_5" id="header_bg_5">
+                    <label for="header_bg_5"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="header_bg" value="color_6" id="header_bg_6">
+                    <label for="header_bg_6"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="header_bg" value="color_7" id="header_bg_7">
+                    <label for="header_bg_7"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="header_bg" value="color_8" id="header_bg_8">
+                    <label for="header_bg_8"></label>
+                  </span>
+                                </li>
+                                <li class="drop-title"><p>侧边栏</p></li>
+                                <li class="drop-skin-li clearfix">
+                  <span class="inverse">
+                    <input type="radio" name="sidebar_bg" value="default" id="sidebar_bg_1" checked>
+                    <label for="sidebar_bg_1"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="sidebar_bg" value="color_2" id="sidebar_bg_2">
+                    <label for="sidebar_bg_2"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="sidebar_bg" value="color_3" id="sidebar_bg_3">
+                    <label for="sidebar_bg_3"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="sidebar_bg" value="color_4" id="sidebar_bg_4">
+                    <label for="sidebar_bg_4"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="sidebar_bg" value="color_5" id="sidebar_bg_5">
+                    <label for="sidebar_bg_5"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="sidebar_bg" value="color_6" id="sidebar_bg_6">
+                    <label for="sidebar_bg_6"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="sidebar_bg" value="color_7" id="sidebar_bg_7">
+                    <label for="sidebar_bg_7"></label>
+                  </span>
+                                    <span>
+                    <input type="radio" name="sidebar_bg" value="color_8" id="sidebar_bg_8">
+                    <label for="sidebar_bg_8"></label>
+                  </span>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--切换主题配色-->
                     </ul>
-                </li>
-                <li class="new-nav" id="new-nav">
-                    <i></i>
-                    <a href="#"><i class="iconfont">&#xe713;</i><span class="layui-badge">5</span></a>
-                    <ul class="news" id="news" style="display: none;">
-                        <li class="dropdown-header"><i class="iconfont">&#xe6bc;</i>5条投诉</li>
-                        <li> <a href="#">
-                            <div class="clearfix">
-                                <span class="pull-left"> <i class="btn btn-pink iconfont">&#xe69b;</i> 投诉 </span>
-                                <span class="pull-right badge badge-info">+5</span>
-                            </div> </a> </li>
 
-                        <li> <a href="javascript:;"> 查看所有投诉 <i class="iconfont">&#xe69b;</i> </a> </li>
-                    </ul>
-                </li>
+                </div>
+            </nav>
 
-                <li class="layui-nav-item"> <a href="javascript:;">admin</a>
-                    <dl class="layui-nav-child">
-                        <!-- 二级菜单 -->
-                        <dd><a href="javascript:;" onclick="one_set('个人信息','one_set.html','1000','600')">个人信息</a>
-                        </dd>
-                        <dd><a href>切换帐号</a></dd>
-                        <dd><a href="javascript:;" onclick="logout()">退出</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item x-index"><a href="#"></a></li>
-            </ul>
-        </div>
-    </div>
+        </header>
+        <!--End 头部信息-->
 
-    <!--左侧导航区域-->
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
 
+            <div class="container-fluid">
+                <div class="row">
+                    <p style="font-size: 20px;padding-left: 30px;background-color: white;">健康小贴士</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-lg-6">
+                        <div class="card bg-info">
+                            <div class="card-body clearfix">
+                                <div class="pull-right">
+                                    <p class="h4 text-white m-t-0">火龙果</p>
+                                    <p class="h3 text-white m-b-0">火龙果营养丰富，功用独特，对人体健康有很多作用。它能够排毒解毒，尤其对于重金属解毒功效明显。它还能够抗衰老，预防脑细胞变异，控制老年痴呆症的发生；对于美白，养颜，减肥，降血糖，润肠滑肠，预防大肠癌发生等有显著的功效。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="layui-side layui-bg-black x-side show_list" style="left:0px;" id="table1">
-        <div style="height: 130px; width: 220px; ">
-            <a class="img" title="我的头像" style="display: block;width: 80px;height: 80px;margin: 10px auto 10px;">
-                <img src="images/tx.jpeg" class="userAvatar" style="display: block;width: 100%;height: 100%;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;border: 4px solid #44576b;box-sizing: border-box;">
-            </a>
-            <p style=" display: block;width: 100%;height: 25px;color: #ffffff;text-align: center;font-size: 12px;white-space: nowrap;line-height: 25px;overflow: hidden;">
-                你好！<span class="userName">admin</span>, 欢迎回来
-            </p>
-        </div>
-        <div class="layui-side-scroll">
-
-            <ul class="layui-nav layui-nav-tree site-demo-nav" lay-filter="side">
-
-
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;" _href="welcome.html"> <i class="layui-icon left-nav-li" lay-tips="首页">&#xe68e;</i><cite>控制台</cite> </a>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="iconfont icon-dashaxiaoqudizhi01" style="top: 3px;"></i><cite>小区管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class>
-                        <dd class> <a href="javascript:;" _href="communitylist.html"> <cite>小区列表</cite> </a> </dd>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon iconfont icon-lvhuaxiaoqu" style="top: 3px;"></i><cite>房产管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class>
-                        <dd class> <a href="javascript:;" _href="homelist.html"> <cite>房产管理</cite> </a> </dd>
-                        </dd>
-                        <dd class>
-                        <dd class> <a href="javascript:;" _href="buildinglst.html"> <cite>栋数管理</cite> </a> </dd>
-                        </dd>
-
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon iconfont icon-yezhuxian" style="top: 3px;"></i><cite>业主信息管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class>
-                        <dd class> <a href="javascript:;" _href="personnel_list.html"> <cite>人员管理</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="vehicle_list.html"> <cite>车辆管理</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="pet_list.html"> <cite>宠物管理</cite> </a> </dd>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon iconfont icon-tingchewei" style="top: 3px;"></i><cite>停车位管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class>
-                        <dd class> <a href="javascript:;" _href="parkinglist.html"> <cite>车位管理</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="parkingusagelist.html"> <cite>车位使用管理</cite> </a> </dd>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon iconfont icon-fuwu" style="top: 3px;"></i><cite>服务管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class> <a href="javascript:;" _href="activity_list.html"> <cite>活动管理</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="repairlist.html"> <cite>保修管理</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="complainlist.html"> <cite>投诉管理</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="mailboxlist.html"> <cite>信箱管理</cite> </a> </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon iconfont icon-zichan" style="top: 3px;"></i><cite>资产管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class> <a href="javascript:;" _href="device_list.html"> <cite>资产设备列表</cite> </a> </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon iconfont icon-shoufeizhan" style="top: 3px;"></i><cite>收费管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class> <a href="javascript:;" _href="pro_list.html"> <cite>收费项目</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="promx_list.html"> <cite>收费明细管理</cite> </a> </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe613;</i><cite>管理员管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class> <a href="javascript:;" _href="adminlist.html"> <cite>管理员列表</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="admingroup.html"> <cite>用户组管理</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="authrule.html"> <cite>权限管理</cite> </a> </dd>
-                    </dl>
-                </li>
-
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe614;</i><cite>系统设置</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class> <a href="javascript:;" _href="system.html"> <cite>系统设置</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="one_set.html"> <cite>个人设置</cite> </a> </dd>
-
-                    </dl>
-                </li>
-                <li class="layui-nav-item" style="height: 30px; text-align: center"> </li>
-            </ul>
-        </div>
-    </div>
-
-
-    <div class="layui-side layui-bg-black x-side hide_lits" style="left:0px;" id="table2">
-        <div style="height: 130px; width: 220px; ">
-            <a class="img" title="我的头像" style="display: block;width: 80px;height: 80px;margin: 10px auto 10px;">
-                <img src="images/tx.jpeg" class="userAvatar" style="display: block;width: 100%;height: 100%;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;border: 4px solid #44576b;box-sizing: border-box;">
-            </a>
-            <p style=" display: block;width: 100%;height: 25px;color: #ffffff;text-align: center;font-size: 12px;white-space: nowrap;line-height: 25px;overflow: hidden;">
-                你好！<span class="userName">xiyuan</span>, 欢迎回来
-            </p>
-        </div>
-        <div class="layui-side-scroll">
-            <ul class="layui-nav layui-nav-tree site-demo-nav" lay-filter="side">
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe607;</i><cite>栏目管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class>
-                        <dd class> <a href="javascript:;" _href="/xiyuan/cate/lst.html"> <cite>栏目列表</cite> </a> </dd>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe62d;</i><cite>公告管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class>
-                        <dd class> <a href="javascript:;" _href="/xiyuan/notice/typelist.html"> <cite>公告类型</cite> </a> </dd>
-                        </dd>
-                        <dd class>
-                        <dd class> <a href="javascript:;" _href="/xiyuan/notice/lst.html"> <cite>公告列表</cite> </a> </dd>
-                        </dd>
-
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe634;</i><cite>文章管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class>
-                        <dd class> <a href="javascript:;" _href="/xiyuan/article/typelist.html"> <cite>文章类型列表</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="/xiyuan/article/lst.html"> <cite>文章列表</cite> </a> </dd>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe642;</i><cite>订单管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class>
-                        <dd class> <a href="javascript:;" _href="./welcome.html"> <cite>订单列表（待开发）</cite> </a> </dd>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe630;</i><cite>分类管理111</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class> <a href="javascript:;" _href="./category.html"> <cite>分类列表</cite> </a> </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe606;</i><cite>评论管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class> <a href="javascript:;" _href="./comment-list.html"> <cite>评论列表</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="./feedback-list.html"> <cite>意见反馈</cite> </a> </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe612;</i><cite>会员管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class> <a href="javascript:;" _href="member-list.html"> <cite>会员列表</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="./member-del.html"> <cite>删除会员</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="./member-level.html"> <cite>等级管理</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="./member-kiss.html"> <cite>积分管理</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="./member-view.html"> <cite>浏览记录</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="./member-view.html"> <cite>分享记录</cite> </a> </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe613;</i><cite>管理员管理</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class> <a href="javascript:;" _href="/xiyuan/admin/lst.html"> <cite>管理员列表</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="./admin-role.html"> <cite>角色管理</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="./admin-cate.html"> <cite>权限分类</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="./admin-rule.html"> <cite>权限管理</cite> </a> </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe629;</i><cite>系统统计</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class> <a href="javascript:;" _href="./echart.html"> <cite>统计报表</cite> </a> </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"> <a class="javascript:;" href="javascript:;"> <i class="layui-icon" style="top: 3px;">&#xe614;</i><cite>系统设置</cite> </a>
-                    <dl class="layui-nav-child">
-                        <dd class> <a href="javascript:;" _href="./sys-set.html"> <cite>系统设置</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="./sys-data.html"> <cite>数字字典</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="./sys-shield.html"> <cite>屏蔽词</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="./sys-log.html"> <cite>系统日志</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="./sys-link.html"> <cite>友情链接</cite> </a> </dd>
-                        <dd class> <a href="javascript:;" _href="./sys-qq.html"> <cite>第三方登录</cite> </a> </dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item" style="height: 30px; text-align: center"> </li>
-            </ul>
-        </div>
-    </div>
-
-
-    <div class="layui-tab layui-tab-card site-demo-title x-main" lay-filter="x-tab" lay-allowclose="true" style="left: 220px;border-left: solid 2px #2299ee;">
-        <ul class="layui-tab-title">
-            <li class="layui-this"> 我的桌面 <i class="layui-icon layui-unselect layui-tab-close">ဆ</i> </li>
-        </ul>
-        <div class="layui-tab-content site-demo site-demo-body">
-            <div class="layui-tab-item layui-show">
-                <iframe frameborder="0" src="welcome.html" class="x-iframe"></iframe>
+                    <div class="col-sm-6 col-lg-6">
+                        <div class="card bg-cyan">
+                            <div class="card-body clearfix">
+                                <div class="pull-right">
+                                    <p class="h4 text-white m-t-0">火龙果</p>
+                                    <p class="h3 text-white m-b-0">火龙果营养丰富，功用独特，对人体健康有很多作用。它能够排毒解毒，尤其对于重金属解毒功效明显。它还能够抗衰老，预防脑细胞变异，控制老年痴呆症的发生；对于美白，养颜，减肥，降血糖，润肠滑肠，预防大肠癌发生等有显著的功效。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-6">
+                        <div class="card bg-success">
+                            <div class="card-body clearfix">
+                                <div class="pull-right">
+                                    <p class="h4 text-white m-t-0">香蕉</p>
+                                    <p class="h3 text-white m-b-0">香蕉对人有非常重要的作用。它里面包含镁离子能使肌肉放松，起到安眠的作用。睡前吃也不不担心发胖，能促进排便，防止便秘。另外，还能够使人驱散悲观，烦躁的情绪，保持愉快的心情。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-6">
+                        <div class="card bg-primary">
+                            <div class="card-body clearfix">
+                                <div class="pull-right">
+                                    <p class="h4 text-white m-t-0">葡萄</p>
+                                    <p class="h3 text-white m-b-0">葡萄也含有丰富的营养价值。能够补气，养血，美容，还能利尿，安胎器。其葡萄皮和葡萄籽比葡萄肉更有营养价值。葡萄籽中含有非常丰富的增强免疫，延缓衰老的物质。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+
+        </main>
+        <!--End 页面主要内容-->
     </div>
-    <div class="site-mobile-shade"> </div>
 </div>
 
-<script src="js/layui.js" charset="utf-8"></script>
-<script src="js/main.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/x-layui.js" charset="utf-8"></script>
-
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="js/main.min.js"></script>
 <script>
-    $(".daohang").click(function(){
-        var table = $(this).attr("ids");
-        var ids = $(".show_list").attr("id");
-        $("#"+ids+"").addClass("hide_lits");
-        $("#"+ids+"").removeClass("show_list");
-        $(""+table+"").removeClass("hide_lits");
-        $(""+table+"").addClass("show_list");
-    })
-
-
-</script>
-<script>
-    layui.use(['laydate','element','laypage','layer'], function(){
-        $ = layui.jquery;//jquery
-        laydate = layui.laydate;//日期插件
-        lement = layui.element();//面包导航
-        laypage = layui.laypage;//分页
-        layer = layui.layer;//弹出层
-        okLoading.close($)
-        //以上模块根据需要引入
-
-    });
-    /**
-     * 退出登陆
-     */
-    function logout() {
-
+    function getUser() {
         $.ajax({
-            type:"post",
-            url:"xxxxx",
-            data:{e:1},
-            dataType:"json",
-            success:function (data) {
-                if(data.status==1){
-                    layer.msg(data.info,{icon:1,time:1000});
-                    setTimeout("window.location.href='xxxx'",2000);return false;
-                    return false;
-                }else{
-                    layer.msg(data.info,{icon:5,time:2000});return false;
+            url: "user/session",
+            type: "get",
+            //发送的数据
+            data: "",
+            dataType: "json",
+            success: function (data) {
+                if (data.status == 0){
+                    alert(data.msg);
+                }
+                else{
+                    var username = data.username;
+                    $("#username").html(username);
                 }
             }
-
         })
-        return false;
     }
-
-    function one_set(title,url,w,h){
-        x_admin_show(title,url,w,h);
-    }
-</script>
-<script>
-    //顶部时间
-    function getTime(){
-        var myDate = new Date();
-        var myYear = myDate.getFullYear(); //获取完整的年份(4位,1970-????)
-        var myMonth = myDate.getMonth()+1; //获取当前月份(0-11,0代表1月)
-        var myToday = myDate.getDate(); //获取当前日(1-31)
-        var myDay = myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
-        var myHour = myDate.getHours(); //获取当前小时数(0-23)
-        var myMinute = myDate.getMinutes(); //获取当前分钟数(0-59)
-        var mySecond = myDate.getSeconds(); //获取当前秒数(0-59)
-        var week = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
-        var nowTime;
-
-        nowTime = myYear+'-'+fillZero(myMonth)+'-'+fillZero(myToday)+'&nbsp;&nbsp;'+week[myDay]+'&nbsp;&nbsp;'+fillZero(myHour)+':'+fillZero(myMinute)+':'+fillZero(mySecond);
-        //console.log(nowTime);
-        $('#time').html(nowTime);
-    };
-    function fillZero(str){
-        var realNum;
-        if(str<10){
-            realNum	= '0'+str;
-        }else{
-            realNum	= str;
-        }
-        return realNum;
-    }
-    setInterval(getTime,1000);
-</script>
-<script>
-    window.onload=function () {
-        var click=document.getElementById('new-nav');
-        var news=document.getElementById('news');
-        click.addEventListener('mousemove',function () {
-            news.style.display='block';
-        });
-        click.addEventListener('mouseout',function () {
-            news.style.display='none';
-        });
-
-        var gonggao=document.getElementById('gonggao');
-        var gonggaos=document.getElementById('gonggaos');
-        gonggao.addEventListener('mousemove',function () {
-            gonggaos.style.display='block';
-        });
-        gonggao.addEventListener('mouseout',function () {
-            gonggaos.style.display='none';
-        });
-    }
+    window.onload = getUser;
 </script>
 </body>
 </html>

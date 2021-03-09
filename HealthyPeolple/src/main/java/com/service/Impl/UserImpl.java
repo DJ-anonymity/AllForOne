@@ -12,12 +12,12 @@ public class UserImpl implements UserService {
     @Autowired
     UserDao userDao;
     @Override
-    public Integer CheckLogin(User user) {
+    public User CheckLogin(User user) {
         User user1 = userDao.selectByUserName(user.getUsername());
         if (user1.getUid()>0)
             if (user1.getPassword().equals(user.getPassword()))
-                return user1.getStatus();
-        return 2;
+                return user1;
+        return null;
     }
 
     @Override
@@ -28,7 +28,6 @@ public class UserImpl implements UserService {
 
     @Override
     public User queryById(Integer i){
-        i++;
         System.out.println("i is :"+i);
         return userDao.selectByPrimaryKey(i);
     }
