@@ -27,6 +27,30 @@
             </Config>
           </value>
         </entry>
+        <entry key="record">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="HealthyPeolple/src/main/java" />
+              <option name="daoName" value="RecordDao" />
+              <option name="daoPackage" value="com.dao" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="modelMvnPath" value="HealthyPeolple/src/main/java" />
+              <option name="modelName" value="Record" />
+              <option name="modelPackage" value="com.pojo" />
+              <option name="name" value="record" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="Rid" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="record" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="HealthyPeolple/src/main/resources" />
+              <option name="xmlPackage" value="mapper" />
+            </Config>
+          </value>
+        </entry>
         <entry key="user">
           <value>
             <Config>
@@ -47,6 +71,30 @@
               <option name="useLombokPlugin" value="true" />
               <option name="useSchemaPrefix" value="true" />
               <option name="xmlMvnPath" value="src/main/resources/gggg" />
+              <option name="xmlPackage" value="mapper" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="waring">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="HealthyPeolple/src/main/java" />
+              <option name="daoName" value="WaringDao" />
+              <option name="daoPackage" value="com.dao" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="modelMvnPath" value="HealthyPeolple/src/main/java" />
+              <option name="modelName" value="Waring" />
+              <option name="modelPackage" value="com.pojo" />
+              <option name="name" value="waring" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="Wid" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="waring" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="HealthyPeolple/src/main/resources" />
               <option name="xmlPackage" value="mapper" />
             </Config>
           </value>
