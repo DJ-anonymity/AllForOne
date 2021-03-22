@@ -9,4 +9,5 @@ public interface UserService {
 
     public User queryById(Integer id);
     public User queryByName(String name);
+    int editPassword(User user);
 }

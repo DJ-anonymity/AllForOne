@@ -53,8 +53,17 @@ public class UserC {
         System.out.println("status: "+status);
         return ServerResponse.createBySuccessMessage("注册成功,请登录");
     }
-    @RequestMapping("login")
+    @RequestMapping("/login")
     public String loginUser(){
         return "login.html";
+    }
+
+    @PostMapping("/edit")
+    @ResponseBody
+    public ServerResponse editPassword(@RequestBody String password,HttpSession session){
+        User user = (User) session.getAttribute("user");
+        user.setPassword(password);
+        userService.editPassword(user);
+        return ServerResponse.createBySuccessMessage("修改成功");
     }
 }

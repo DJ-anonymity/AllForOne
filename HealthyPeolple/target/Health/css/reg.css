@@ -173,7 +173,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: block;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #42a5f5;
+    background-color: #33cabb;
 }
 .form-data .lang-btn.off{
     color: #a0a0a0;

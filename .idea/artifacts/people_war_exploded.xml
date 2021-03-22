@@ -14,6 +14,7 @@
           <element id="module-output" name="people" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.python:jython-standalone:2.7.0" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.9.5" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aspects:5.2.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:5.2.3.RELEASE" />

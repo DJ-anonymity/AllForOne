@@ -34,10 +34,11 @@
                 <div class="r-forget cl">
                     <a href="getpass.html" class="y">忘记密码</a>
                 </div>
-                <a class="lang-btn resign" id="login">登录</a>
+                <a class="lang-btn" id="login">登录</a>
                 <a class="lang-btn resign" href="http://localhost:8080/people_war_exploded/resign.html">注册</a>
                 <p class="right">Powered by © 2021</p>
             </form>
+
         </div>
     </div>
 </div>
@@ -67,6 +68,7 @@
             contentType: "application/json;charset=UTF-8",
             dataType: "json",
             success: function (data) {
+                console.log("user/checkLogin");
                 if (data.status == 0){
                     alert(data.msg);
                 }

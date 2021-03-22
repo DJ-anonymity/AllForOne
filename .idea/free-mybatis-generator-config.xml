@@ -27,6 +27,30 @@
             </Config>
           </value>
         </entry>
+        <entry key="food">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="HealthyPeolple/src/main/java" />
+              <option name="daoName" value="FoodDao" />
+              <option name="daoPackage" value="com.dao" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="modelMvnPath" value="HealthyPeolple/src/main/java" />
+              <option name="modelName" value="Food" />
+              <option name="modelPackage" value="com.pojo" />
+              <option name="name" value="food" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="Fid" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="food" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="HealthyPeolple/src/main/resources" />
+              <option name="xmlPackage" value="mapper" />
+            </Config>
+          </value>
+        </entry>
         <entry key="record">
           <value>
             <Config>

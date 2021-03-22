@@ -14,10 +14,11 @@ public class UserImpl implements UserService {
     @Override
     public User CheckLogin(User user) {
         User user1 = userDao.selectByUserName(user.getUsername());
+        User user2 = new User();
         if (user1.getUid()>0)
             if (user1.getPassword().equals(user.getPassword()))
                 return user1;
-        return null;
+        return user2;
     }
 
     @Override
@@ -36,4 +37,11 @@ public class UserImpl implements UserService {
     public User queryByName(String name) {
         return null;
     }
+
+    @Override
+    public int editPassword(User user) {
+        return userDao.updateByPrimaryKey(user);
+    }
+
+
 }
